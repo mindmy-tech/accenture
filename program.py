@@ -1,19 +1,18 @@
-import deepface
+from deepface import DeepFace
 
-# Load the DeepFace library
-deepface.loadModel("models/facenet_keras.h5")
+# Path to the image containing known faces (reference image)
+reference_image_path = "path_to_reference_image.jpg"
 
-# Load the image of the person you want to identify
-image = open("image.jpg", "rb").read()
+# Path to the image you want to recognize (target image)
+target_image_path = "path_to_target_image.jpg"
 
-# Identify the person in the image
-face = deepface.detectFace(image)
+# Perform face recognition
+result = DeepFace.verify(reference_image_path, target_image_path)
 
-# Get the face embedding
-embedding = deepface.extractFaceEmbedding(image, face)
-
-# Find the person with the closest face embedding
-prediction = deepface.findSimilarFace(embedding, "dataset/")
-
-# Print the name of the person
-print(prediction["name"])
+# Print the result
+if result["verified"]:
+    print("The target image contains the same person as the reference image.")
+    print("Facial distance:", result["distance"])
+else:
+    print("The target image does not contain the same person as the reference image.")
+    print("Facial distance:", result["distance"])
