@@ -1,10 +1,10 @@
 from deepface import DeepFace
 
 # Path to the image containing known faces (reference image)
-reference_image_path = "C:\Studies\Events\Accenture Innovation Challenge 2023\Project\accenture\Dataset\Screenshot 2023-08-06 194422.png"
+reference_image_path = r"C:\Studies\Events\Accenture Innovation Challenge 2023\Project\accenture\Dataset\Screenshot 2023-08-06 194422.png"
 
 # Path to the image you want to recognize (target image)
-target_image_path = "path_to_target_image.jpg"
+target_image_path = r"C:\Studies\Events\Accenture Innovation Challenge 2023\Project\accenture\Dataset\WhatsApp Image 2023-08-06 at 8.00.49 PM (1).jpeg"
 
 # Perform face recognition
 result = DeepFace.verify(reference_image_path, target_image_path)
