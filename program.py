@@ -1,7 +1,7 @@
 from deepface import DeepFace
 
 # Path to the image containing known faces (reference image)
-reference_image_path = "path_to_reference_image.jpg"
+reference_image_path = "C:\Studies\Events\Accenture Innovation Challenge 2023\Project\accenture\Dataset\Screenshot 2023-08-06 194422.png"
 
 # Path to the image you want to recognize (target image)
 target_image_path = "path_to_target_image.jpg"
