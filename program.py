@@ -14,10 +14,10 @@ for path in directory_list:
 
 # Print the result
     if result["verified"]:
-        pass
-       # print("The target image contains the same person as the reference image.")
-       # print("Facial distance:", result["distance"])
+        print("The target image contains the same person as the reference image.")
+        print("Facial distance:", result["distance"])
     else:
-        os.remove(target_image_path)
-       # print("The target image does not contain the same person as the reference image.")
-       # print("Facial distance:", result["distance"])
+        #os.remove(target_image_path)
+        print("The target image does not contain the same person as the reference image.")
+        print("Facial distance:", result["distance"])
+        #print('removed successfully')
