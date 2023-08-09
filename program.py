@@ -1,10 +1,12 @@
 from deepface import DeepFace
-
+import os
+cwd=os.getcwd()
+cwd=cwd.removesuffix('pragram.py')
 # Path to the image containing known faces (reference image)
-reference_image_path = r"C:\Studies\Events\Accenture Innovation Challenge 2023\Project\accenture\Dataset\Screenshot 2023-08-06 194422.png"
+reference_image_path = rf"{cwd}\accenture\Dataset\Screenshot 2023-08-06 194422.png"
 
 # Path to the image you want to recognize (target image)
-target_image_path = r"C:\Studies\Events\Accenture Innovation Challenge 2023\Project\accenture\Dataset\WhatsApp Image 2023-08-06 at 8.00.49 PM (1).jpeg"
+target_image_path = rf"{cwd}\accenture\Dataset\WhatsApp Image 2023-08-06 at 8.00.49 PM (1).jpeg"
 
 # Perform face recognition
 result = DeepFace.verify(reference_image_path, target_image_path)
