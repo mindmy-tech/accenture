@@ -15,7 +15,7 @@ def index():
 def handle_connect():
     print('Client connected')
 
-def stream_video():
+
 def stream_video():
     cap = cv2.VideoCapture(0)  # Use the appropriate camera index or video file
 
