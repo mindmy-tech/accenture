@@ -16,17 +16,22 @@ def handle_connect():
     print('Client connected')
 
 def stream_video():
+def stream_video():
     cap = cv2.VideoCapture(0)  # Use the appropriate camera index or video file
 
-    while True:
-        ret, frame = cap.read()
-        if not ret:
-            break
+    try:
+        while True:
+            ret, frame = cap.read()
+            if not ret:
+                break
 
-        _, buffer = cv2.imencode('.jpg', frame)
-        frame_data = base64.b64encode(buffer).decode('utf-8')
+            _, buffer = cv2.imencode('.jpg', frame)
+            frame_data = base64.b64encode(buffer).decode('utf-8')
 
-        socketio.emit('video_frame', frame_data, broadcast=True)
+            socketio.emit('video_frame', frame_data, broadcast=True)
+    except Exception as e:
+        print("Error in stream_video:", e)
+
 
 if __name__ == '__main__':
     video_thread = Thread(target=stream_video)
