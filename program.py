@@ -5,7 +5,7 @@ cwd=cwd.removesuffix('pragram.py')
 folders=['000','001','002','003','004','005']
 for folder in folders:
     # Path to the image containing known faces (reference image)
-    reference_image_path = rf"{cwd}\accenture\Dataset\{folder}.jpeg"
+    reference_image_path = rf"{cwd}\accenture\Dataset\{folder}.jpeg"    
 
     directory_list = os.listdir(rf"{cwd}\accenture\Dataset\mokith\All images")
     no_of_files = 0
