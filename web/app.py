@@ -28,7 +28,7 @@ def stream_video():
             _, buffer = cv2.imencode('.jpg', frame)
             frame_data = base64.b64encode(buffer).decode('utf-8')
 
-            socketio.emit('video_frame', frame_data, broadcast=True)
+            socketio.emit('video_frame', frame_data)
     except Exception as e:
         print("Error in stream_video:", e)
 
